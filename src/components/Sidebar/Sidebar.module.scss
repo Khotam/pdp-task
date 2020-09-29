@@ -1,0 +1,46 @@
+.sidebar {
+    width: 23.5rem;
+    height: calc(100vh - var(--vertical-pad) * 2);
+    position: fixed;
+    border-right: 1px solid var(--gray-color);
+    .nav {
+        padding-top: 8rem;
+        .list {
+            list-style-type: none;
+            padding: 0;
+            .listItem {
+                display: flex;
+                align-items: center;
+                margin-bottom: 3.2rem;
+                position: relative;
+                a {
+                    transition: all 0.2s ease-in-out;
+                    color: var(--dark-color);
+                    cursor: pointer;
+                    &:hover {
+                        color: var(--primary-color);
+                    }
+                }
+                img {
+                    margin-right: 1.6rem;
+                }
+                &.active {
+                    a {
+                        color: var(--primary-color);
+                    }
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        right: -0.2rem;
+                        height: 100%;
+                        width: 0.3rem;
+                        background-color: var(--primary-color);
+                        border-radius: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
